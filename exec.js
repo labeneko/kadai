@@ -10,7 +10,7 @@ fs.createReadStream('./popu_source.csv')
         // 正直キーはいらないので値だけの配列に変換してrowsにpushします
         rows.push(Object.values(row))
     })
-    .on('end', () => { // rowsの中に全部の行がとりあえず入ってるって感じです
+    .on('end', () => { // rowsの中に全部の行が二次元配列で入ってるって感じです
         // 「男女計」の「総人口」のみの人口データがある行のみに絞り込みます
         const populationRows = filterPopulationRows(rows);
         // 年齢と人口のみの二次元配列にします
